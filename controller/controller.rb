@@ -1,8 +1,17 @@
-require_relative 'config/environment'
+class ApplicationController < Sinatra::Base
 
-get '/' do
-      erb :index
+  configure do
+  	set :views, "app/views"
+  	set :public_dir, "public"
+  end
+
+  get "/" do
+  	erb :index
+  end
+  
+  
 end
+
     
 get "/info" do
   "Testing the info page"
